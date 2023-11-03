@@ -34,12 +34,14 @@ glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
         render(window);
         glfwPollEvents();
     }
+    glfwDestroyWindow(window);
+    glfwTerminate();
     return 0;
 }
 void init(){
     program.loadShaders("shader.vert", "shader.frag");
-    vector<vec3> p = {{-0.7,-0.7,0}, {-0.7,0.7,0}, {0.7,-0.7,0}, {0.7,0.7,0}};
-    vector<uvec3> triangles = {{0,1,2}};
+    vector<vec3> p = {{0.5,-0.5,0}, {0,0.5,0}, {-0.5,-0.5,0}, {0,-0.5,0}, {-0.3,0,0}, {0.3,0,0}};
+    vector<uvec3> triangles = {{0,3,5}, {2,4,3}, {1,4,5}};
     
     glGenBuffers(1, &vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
@@ -66,6 +68,6 @@ void render( GLFWwindow* window){
     glBindVertexArray(vertexArray);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
     // 몇번째 점까지
-    glDrawElements(GL_TRIANGLES, 1*3, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, 3*3, GL_UNSIGNED_INT, 0);
     glfwSwapBuffers(window);
 }

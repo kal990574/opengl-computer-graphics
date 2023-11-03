@@ -1,5 +1,5 @@
+#include "GL/glew.h"
 #define GLEW_STATIC
-#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <vector>
@@ -19,7 +19,15 @@ GLuint vertexArray = 0;
 int main(){
     if(!glfwInit()) return 0;
     
+#ifdef __APPLE__
+glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
+#endif
+    
     GLFWwindow* window = glfwCreateWindow(640, 480, "Hello World", 0, 0);
+    glfwMakeContextCurrent(window);
     glewInit();
     init();
     while(!glfwWindowShouldClose(window)){
@@ -31,7 +39,7 @@ int main(){
 void init(){
     program.loadShaders("shader.vert", "shader.frag");
     vector<vec3> p = {{-0.7,-0.7,0}, {-0.7,0.7,0}, {0.7,-0.7,0}, {0.7,0.7,0}};
-    vector<ivec3> triangles = {{0,1,2}};
+    vector<uvec3> triangles = {{0,1,2}};
     
     glGenBuffers(1, &vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
@@ -39,7 +47,7 @@ void init(){
     
     glGenBuffers(1, &indexBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, triangles.size()*sizeof(ivec3), triangles.data(), GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, triangles.size()*sizeof(uvec3), triangles.data(), GL_STATIC_DRAW);
     
     glGenVertexArrays(1, &vertexArray);
     glBindVertexArray(vertexArray);
@@ -58,6 +66,6 @@ void render( GLFWwindow* window){
     glBindVertexArray(vertexArray);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
     // 몇번째 점까지
-    glDrawElements(GL_TRIANGLES, 1*3, GL_INT, 0);
+    glDrawElements(GL_TRIANGLES, 1*3, GL_UNSIGNED_INT, 0);
     glfwSwapBuffers(window);
 }

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		98003FD52ABC0BF200A6A4AE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98003FD42ABC0BF200A6A4AE /* main.cpp */; };
 		98003FDF2ACAAE0900A6A4AE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98003FDE2ACAAE0900A6A4AE /* OpenGL.framework */; };
 		98003FE22ACD2B0800A6A4AE /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 98003FE12ACD2B0800A6A4AE /* libglfw.3.3.dylib */; };
 		988B8E7B2AF5601E0095B7D9 /* libGLEW.2.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 988B8E7A2AF5601E0095B7D9 /* libGLEW.2.2.0.dylib */; };
+		98BCC7242B149AAE00585D5E /* viewing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98BCC7222B149AAE00585D5E /* viewing.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +32,8 @@
 		98003FE02ACAAE6D00A6A4AE /* OpenGLTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenGLTest.entitlements; sourceTree = "<group>"; };
 		98003FE12ACD2B0800A6A4AE /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../opt/homebrew/Cellar/glfw/3.3.8/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		988B8E7A2AF5601E0095B7D9 /* libGLEW.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.2.0.dylib; path = ../../../../../opt/homebrew/Cellar/glew/2.2.0_1/lib/libGLEW.2.2.0.dylib; sourceTree = "<group>"; };
+		98BCC7222B149AAE00585D5E /* viewing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = viewing.cpp; sourceTree = "<group>"; };
+		98BCC7232B149AAE00585D5E /* viewing.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = viewing.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,8 @@
 			children = (
 				98003FE02ACAAE6D00A6A4AE /* OpenGLTest.entitlements */,
 				98003FD42ABC0BF200A6A4AE /* main.cpp */,
+				98BCC7222B149AAE00585D5E /* viewing.cpp */,
+				98BCC7232B149AAE00585D5E /* viewing.hpp */,
 			);
 			path = OpenGLTest;
 			sourceTree = "<group>";
@@ -118,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 98003FCC2ABC0BF200A6A4AE /* Build configuration list for PBXProject "OpenGLTest" */;
+			buildConfigurationList = 98003FCC2ABC0BF200A6A4AE /* Build configuration list for PBXProject "OpenGL_Project" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -141,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98003FD52ABC0BF200A6A4AE /* main.cpp in Sources */,
+				98BCC7242B149AAE00585D5E /* viewing.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +300,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		98003FCC2ABC0BF200A6A4AE /* Build configuration list for PBXProject "OpenGLTest" */ = {
+		98003FCC2ABC0BF200A6A4AE /* Build configuration list for PBXProject "OpenGL_Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98003FD62ABC0BF200A6A4AE /* Debug */,

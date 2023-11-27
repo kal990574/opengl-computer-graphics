@@ -17,7 +17,7 @@
                BlueprintIdentifier = "98003FD02ABC0BF200A6A4AE"
                BuildableName = "OpenGLTest"
                BlueprintName = "OpenGLTest"
-               ReferencedContainer = "container:OpenGLTest.xcodeproj">
+               ReferencedContainer = "container:OpenGL_Project.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
             BlueprintIdentifier = "98003FD02ABC0BF200A6A4AE"
             BuildableName = "OpenGLTest"
             BlueprintName = "OpenGLTest"
-            ReferencedContainer = "container:OpenGLTest.xcodeproj">
+            ReferencedContainer = "container:OpenGL_Project.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
@@ -70,7 +70,7 @@
             BlueprintIdentifier = "98003FD02ABC0BF200A6A4AE"
             BuildableName = "OpenGLTest"
             BlueprintName = "OpenGLTest"
-            ReferencedContainer = "container:OpenGLTest.xcodeproj">
+            ReferencedContainer = "container:OpenGL_Project.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

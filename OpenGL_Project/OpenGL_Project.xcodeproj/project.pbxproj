@@ -26,10 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		98003FD12ABC0BF200A6A4AE /* OpenGLTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98003FD12ABC0BF200A6A4AE /* OpenGL_Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGL_Project; sourceTree = BUILT_PRODUCTS_DIR; };
 		98003FD42ABC0BF200A6A4AE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		98003FDE2ACAAE0900A6A4AE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		98003FE02ACAAE6D00A6A4AE /* OpenGLTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenGLTest.entitlements; sourceTree = "<group>"; };
+		98003FE02ACAAE6D00A6A4AE /* OpenGL_Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenGL_Project.entitlements; sourceTree = "<group>"; };
 		98003FE12ACD2B0800A6A4AE /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../opt/homebrew/Cellar/glfw/3.3.8/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		988B8E7A2AF5601E0095B7D9 /* libGLEW.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.2.0.dylib; path = ../../../../../opt/homebrew/Cellar/glew/2.2.0_1/lib/libGLEW.2.2.0.dylib; sourceTree = "<group>"; };
 		98BCC7222B149AAE00585D5E /* viewing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = viewing.cpp; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		98003FC82ABC0BF200A6A4AE = {
 			isa = PBXGroup;
 			children = (
-				98003FD32ABC0BF200A6A4AE /* OpenGLTest */,
+				98003FD32ABC0BF200A6A4AE /* OpenGL_Project */,
 				98003FD22ABC0BF200A6A4AE /* Products */,
 				98003FDB2ACAADC200A6A4AE /* Frameworks */,
 			);
@@ -62,20 +62,20 @@
 		98003FD22ABC0BF200A6A4AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98003FD12ABC0BF200A6A4AE /* OpenGLTest */,
+				98003FD12ABC0BF200A6A4AE /* OpenGL_Project */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		98003FD32ABC0BF200A6A4AE /* OpenGLTest */ = {
+		98003FD32ABC0BF200A6A4AE /* OpenGL_Project */ = {
 			isa = PBXGroup;
 			children = (
-				98003FE02ACAAE6D00A6A4AE /* OpenGLTest.entitlements */,
+				98003FE02ACAAE6D00A6A4AE /* OpenGL_Project.entitlements */,
 				98003FD42ABC0BF200A6A4AE /* main.cpp */,
 				98BCC7222B149AAE00585D5E /* viewing.cpp */,
 				98BCC7232B149AAE00585D5E /* viewing.hpp */,
 			);
-			path = OpenGLTest;
+			path = OpenGL_Project;
 			sourceTree = "<group>";
 		};
 		98003FDB2ACAADC200A6A4AE /* Frameworks */ = {
@@ -91,9 +91,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		98003FD02ABC0BF200A6A4AE /* OpenGLTest */ = {
+		98003FD02ABC0BF200A6A4AE /* OpenGL_Project */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98003FD82ABC0BF200A6A4AE /* Build configuration list for PBXNativeTarget "OpenGLTest" */;
+			buildConfigurationList = 98003FD82ABC0BF200A6A4AE /* Build configuration list for PBXNativeTarget "OpenGL_Project" */;
 			buildPhases = (
 				98003FCD2ABC0BF200A6A4AE /* Sources */,
 				98003FCE2ABC0BF200A6A4AE /* Frameworks */,
@@ -103,9 +103,9 @@
 			);
 			dependencies = (
 			);
-			name = OpenGLTest;
+			name = OpenGL_Project;
 			productName = OpenGLTest;
-			productReference = 98003FD12ABC0BF200A6A4AE /* OpenGLTest */;
+			productReference = 98003FD12ABC0BF200A6A4AE /* OpenGL_Project */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -135,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				98003FD02ABC0BF200A6A4AE /* OpenGLTest */,
+				98003FD02ABC0BF200A6A4AE /* OpenGL_Project */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +265,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = OpenGLTest/OpenGLTest.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YMHK2GCUQH;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -283,6 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = OpenGLTest/OpenGLTest.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YMHK2GCUQH;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -309,7 +311,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		98003FD82ABC0BF200A6A4AE /* Build configuration list for PBXNativeTarget "OpenGLTest" */ = {
+		98003FD82ABC0BF200A6A4AE /* Build configuration list for PBXNativeTarget "OpenGL_Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98003FD92ABC0BF200A6A4AE /* Debug */,

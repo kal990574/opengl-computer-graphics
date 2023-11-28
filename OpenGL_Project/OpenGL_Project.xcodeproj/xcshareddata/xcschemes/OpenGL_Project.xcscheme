@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "98003FD02ABC0BF200A6A4AE"
-               BuildableName = "OpenGLTest"
-               BlueprintName = "OpenGLTest"
+               BuildableName = "OpenGL_Project"
+               BlueprintName = "OpenGL_Project"
                ReferencedContainer = "container:OpenGL_Project.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "98003FD02ABC0BF200A6A4AE"
-            BuildableName = "OpenGLTest"
-            BlueprintName = "OpenGLTest"
+            BuildableName = "OpenGL_Project"
+            BlueprintName = "OpenGL_Project"
             ReferencedContainer = "container:OpenGL_Project.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -68,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "98003FD02ABC0BF200A6A4AE"
-            BuildableName = "OpenGLTest"
-            BlueprintName = "OpenGLTest"
+            BuildableName = "OpenGL_Project"
+            BlueprintName = "OpenGL_Project"
             ReferencedContainer = "container:OpenGL_Project.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

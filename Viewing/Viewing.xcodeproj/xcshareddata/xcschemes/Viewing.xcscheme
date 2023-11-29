@@ -35,7 +35,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/mambasa/Desktop/ComputerGraphics/Viewing/Viewing/Archive"
+      customWorkingDirectory = "/Users/mambasa/Desktop/ComputerGraphics/Viewing/Viewing"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"

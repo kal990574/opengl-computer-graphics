@@ -10,6 +10,7 @@
 		98DD4BAA2B165D14005FECDB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DD4BA92B165D14005FECDB /* main.cpp */; };
 		98DD4BB22B165D45005FECDB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DD4BB12B165D45005FECDB /* OpenGL.framework */; };
 		98DD4BB42B165D63005FECDB /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DD4BB32B165D63005FECDB /* libglfw.3.3.dylib */; };
+		98DD4BBC2B17994D005FECDB /* j3a.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DD4BB92B178F0F005FECDB /* j3a.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,11 @@
 		98DD4BB12B165D45005FECDB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		98DD4BB32B165D63005FECDB /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../opt/homebrew/Cellar/glfw/3.3.8/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		98DD4BB52B165D99005FECDB /* Viewing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Viewing.entitlements; sourceTree = "<group>"; };
+		98DD4BB62B178F0F005FECDB /* j3a.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = j3a.hpp; sourceTree = "<group>"; };
+		98DD4BB72B178F0F005FECDB /* shader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
+		98DD4BB82B178F0F005FECDB /* shader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vert; sourceTree = "<group>"; };
+		98DD4BB92B178F0F005FECDB /* j3a.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = j3a.cpp; sourceTree = "<group>"; };
+		98DD4BBA2B179853005FECDB /* toys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = toys.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,11 @@
 		98DD4BA82B165D14005FECDB /* Viewing */ = {
 			isa = PBXGroup;
 			children = (
+				98DD4BBA2B179853005FECDB /* toys.h */,
+				98DD4BB92B178F0F005FECDB /* j3a.cpp */,
+				98DD4BB62B178F0F005FECDB /* j3a.hpp */,
+				98DD4BB72B178F0F005FECDB /* shader.frag */,
+				98DD4BB82B178F0F005FECDB /* shader.vert */,
 				98DD4BB52B165D99005FECDB /* Viewing.entitlements */,
 				98DD4BA92B165D14005FECDB /* main.cpp */,
 			);
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98DD4BBC2B17994D005FECDB /* j3a.cpp in Sources */,
 				98DD4BAA2B165D14005FECDB /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

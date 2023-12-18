@@ -29,6 +29,7 @@
 		98DD4BC92B2FF162005FECDB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		98DD4BD12B2FF1DD005FECDB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		98DD4BD32B2FF20E005FECDB /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../opt/homebrew/Cellar/glfw/3.3.8/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		98DD4BD52B2FF245005FECDB /* LTMapping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LTMapping.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 		98DD4BC82B2FF162005FECDB /* LTMapping */ = {
 			isa = PBXGroup;
 			children = (
+				98DD4BD52B2FF245005FECDB /* LTMapping.entitlements */,
 				98DD4BC92B2FF162005FECDB /* main.cpp */,
 			);
 			path = LTMapping;
@@ -254,6 +256,7 @@
 		98DD4BCE2B2FF162005FECDB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LTMapping/LTMapping.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YMHK2GCUQH;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -266,6 +269,7 @@
 		98DD4BCF2B2FF162005FECDB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LTMapping/LTMapping.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YMHK2GCUQH;
 				ENABLE_HARDENED_RUNTIME = YES;

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		98DD4BCA2B2FF162005FECDB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DD4BC92B2FF162005FECDB /* main.cpp */; };
 		98DD4BD22B2FF1DD005FECDB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DD4BD12B2FF1DD005FECDB /* OpenGL.framework */; };
 		98DD4BD42B2FF20E005FECDB /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DD4BD32B2FF20E005FECDB /* libglfw.3.3.dylib */; };
+		98DD4CC92B31718B005FECDB /* Mapping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DD4CC72B31718B005FECDB /* Mapping.cpp */; };
+		98DD4CCE2B317241005FECDB /* j3a.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DD4CCD2B317241005FECDB /* j3a.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,13 @@
 		98DD4BD12B2FF1DD005FECDB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		98DD4BD32B2FF20E005FECDB /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../opt/homebrew/Cellar/glfw/3.3.8/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		98DD4BD52B2FF245005FECDB /* LTMapping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LTMapping.entitlements; sourceTree = "<group>"; };
+		98DD4CC72B31718B005FECDB /* Mapping.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mapping.cpp; sourceTree = "<group>"; };
+		98DD4CC82B31718B005FECDB /* Mapping.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mapping.hpp; sourceTree = "<group>"; };
+		98DD4CCA2B317241005FECDB /* shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vert; sourceTree = "<group>"; };
+		98DD4CCB2B317241005FECDB /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
+		98DD4CCC2B317241005FECDB /* j3a.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = j3a.hpp; sourceTree = "<group>"; };
+		98DD4CCD2B317241005FECDB /* j3a.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = j3a.cpp; sourceTree = "<group>"; };
+		98DD4CD02B3172A1005FECDB /* toys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = toys.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +73,15 @@
 		98DD4BC82B2FF162005FECDB /* LTMapping */ = {
 			isa = PBXGroup;
 			children = (
+				98DD4CD02B3172A1005FECDB /* toys.h */,
+				98DD4CCD2B317241005FECDB /* j3a.cpp */,
+				98DD4CCC2B317241005FECDB /* j3a.hpp */,
+				98DD4CCB2B317241005FECDB /* shader.frag */,
+				98DD4CCA2B317241005FECDB /* shader.vert */,
 				98DD4BD52B2FF245005FECDB /* LTMapping.entitlements */,
 				98DD4BC92B2FF162005FECDB /* main.cpp */,
+				98DD4CC72B31718B005FECDB /* Mapping.cpp */,
+				98DD4CC82B31718B005FECDB /* Mapping.hpp */,
 			);
 			path = LTMapping;
 			sourceTree = "<group>";
@@ -137,7 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98DD4BCA2B2FF162005FECDB /* main.cpp in Sources */,
+				98DD4CCE2B317241005FECDB /* j3a.cpp in Sources */,
+				98DD4CC92B31718B005FECDB /* Mapping.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

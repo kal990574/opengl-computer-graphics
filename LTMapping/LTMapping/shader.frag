@@ -18,6 +18,6 @@ void main(void)
     vec3 V = normalize(cameraPosition - worldPos);
     vec3 R = reflect(-L, N);
     vec3 Ii = vec3(100,100,100)/dot(toLight,toLight);
-    vec3 color = Ii * (diffColor*max(0,dot(N,L)) + specColor*pow(max(0,dot(R,V)),100));
+    vec3 color = diffColor * 0.6 + Ii * (diffColor*max(0,dot(N,L)) + specColor*pow(max(0,dot(R,V)),100));
 	out_Color = vec4(color, 1.0);
 }

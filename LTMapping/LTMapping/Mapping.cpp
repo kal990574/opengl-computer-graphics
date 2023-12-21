@@ -24,6 +24,7 @@ GLuint texCoordBuffer = 0;
 GLuint indexBuffer = 0;
 GLuint vertexArray = 0;
 GLuint diffTex = 0;
+GLuint bumpTex = 0;
 
 float theta = 0;
 float phi = 0;
@@ -74,21 +75,29 @@ glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
     return 0;
 }
 
-void init(){
-    loadJ3A( "dwarf.j3a" );
-    program.loadShaders("shader.vert", "shader.frag");
-    
+GLuint loadTexture(const std::string& filename){
     int w, h, n;
+    GLuint tex = 0;
     stbi_set_flip_vertically_on_load(true);
-    unsigned char* buf = stbi_load(diffuseMap[0].c_str(), &w, &h, &n, 4);
-    glGenTextures(1, &diffTex);
-    glBindTexture(GL_TEXTURE_2D, diffTex);
+    unsigned char* buf = stbi_load(filename.c_str(), &w, &h, &n, 4);
+    glGenTextures(1, &tex);
+    glBindTexture(GL_TEXTURE_2D, tex);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,GL_REPEAT);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB8_ALPHA8, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, buf);
+    glGenerateMipmap(GL_TEXTURE_2D);
     stbi_image_free(buf);
+    return tex;
+}
+
+void init(){
+    loadJ3A( "Trex.j3a" );
+    program.loadShaders("shader.vert", "shader.frag");
+    diffTex = loadTexture(diffuseMap[0]);
+    bumpTex = loadTexture(bumpMap[0]);
+
 
     glGenBuffers(1, &vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
@@ -120,7 +129,7 @@ void init(){
     glEnableVertexAttribArray(2);
     glVertexAttribPointer(2, 2, GL_FLOAT, 0, 0, 0);
 }
-const float PI = 3.14159265358979;
+
 void render( GLFWwindow* window){
     int w,h;
     glfwGetFramebufferSize(window, &w, &h);
@@ -157,6 +166,11 @@ void render( GLFWwindow* window){
     glBindTexture(GL_TEXTURE_2D, diffTex);
     loc = glGetUniformLocation(program.programID, "diffTex");
     glUniform1i(loc, 0);
+    
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, bumpTex);
+    loc = glGetUniformLocation(program.programID, "bumpTex");
+    glUniform1i(loc, 1);
     
     glBindVertexArray(vertexArray);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);

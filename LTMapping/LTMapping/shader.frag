@@ -11,6 +11,8 @@ void main(void)
 {
     vec3 L = normalize(lightPosition - worldPos);
     vec3 N = normalize(normal);
-    vec3 color = vec3(0,1,0) * dot(N,L);
+    vec3 V = normalize(cameraPosition - worldPos);
+    vec3 R = reflect(-L, N);
+    vec3 color = vec3(0,1,0) * dot(N,L) + pow(max(0,dot(R,V)),100);
 	out_Color = vec4(color, 1.0);
 }

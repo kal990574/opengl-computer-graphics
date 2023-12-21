@@ -70,7 +70,7 @@ glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
 }
 
 void init(){
-    loadJ3A( "dragon.j3a" );
+    loadJ3A( "Trex.j3a" );
     program.loadShaders("shader.vert", "shader.frag");
     glGenBuffers(1, &vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
@@ -120,6 +120,12 @@ void render( GLFWwindow* window){
     glUniform3fv(loc, 1, value_ptr(lightPosition));
     loc = glGetUniformLocation(program.programID, "cameraPosition");
     glUniform3fv(loc, 1, value_ptr(cameraPosition));
+    loc = glGetUniformLocation(program.programID, "diffColor");
+    glUniform3fv(loc, 1, value_ptr(diffuseColor[0]));
+    loc = glGetUniformLocation(program.programID, "specColor");
+    glUniform3fv(loc, 1, value_ptr(specularColor[0]));
+    loc = glGetUniformLocation(program.programID, "shininess");
+    glUniform1f(loc, shininess[0]);
     glBindVertexArray(vertexArray);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
     glDrawElements(GL_TRIANGLES, nTriangles[0]*3, GL_UNSIGNED_INT, 0);

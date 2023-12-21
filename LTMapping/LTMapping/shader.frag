@@ -4,15 +4,20 @@ out vec4 out_Color;
 
 uniform vec3 lightPosition;
 uniform vec3 cameraPosition;
+uniform vec3 diffColor;
+uniform vec3 specColor;
+uniform float shininess;
 in vec3 normal;
 in vec3 worldPos;
 
 void main(void)
 {
-    vec3 L = normalize(lightPosition - worldPos);
+    vec3 toLight = lightPosition - worldPos;
+    vec3 L = normalize(toLight);
     vec3 N = normalize(normal);
     vec3 V = normalize(cameraPosition - worldPos);
     vec3 R = reflect(-L, N);
-    vec3 color = vec3(0,1,0) * dot(N,L) + pow(max(0,dot(R,V)),100);
+    vec3 Ii = vec3(100,100,100)/dot(toLight,toLight);
+    vec3 color = Ii * (diffColor*max(0,dot(N,L)) + specColor*pow(max(0,dot(R,V)),100));
 	out_Color = vec4(color, 1.0);
 }

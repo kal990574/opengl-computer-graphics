@@ -10,6 +10,7 @@ out vec3 posWorld;
 out vec3 posCamera;
 out vec3 normal;
 out vec3 worldPos;
+
 void main(void)
 {
     normal = (modelMat * vec4(in_Normal,0)).xyz;

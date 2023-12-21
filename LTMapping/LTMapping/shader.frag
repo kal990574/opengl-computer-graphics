@@ -3,6 +3,7 @@
 out vec4 out_Color;
 
 uniform vec3 lightPosition;
+uniform vec3 cameraPosition;
 in vec3 normal;
 in vec3 worldPos;
 

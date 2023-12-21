@@ -6,8 +6,6 @@ uniform mat4 modelMat;
 uniform mat4 viewMat;
 uniform mat4 projMat;
 
-out vec3 posWorld;
-out vec3 posCamera;
 out vec3 normal;
 out vec3 worldPos;
 

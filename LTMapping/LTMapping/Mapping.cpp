@@ -25,6 +25,7 @@ float phi = 0;
 double lastX = 0, lastY = 0;
 float cameraDistance = 7;
 float fovy = 0.8;
+vec3 lightPosition = vec3(3,10,4);
 
 void cursorCB(GLFWwindow* w, double xPos, double yPos){
     if(glfwGetMouseButton(w, GLFW_MOUSE_BUTTON_1)){
@@ -69,7 +70,7 @@ glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
 }
 
 void init(){
-    loadJ3A( "Trex.j3a" );
+    loadJ3A( "dragon.j3a" );
     program.loadShaders("shader.vert", "shader.frag");
     glGenBuffers(1, &vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
@@ -115,6 +116,10 @@ void render( GLFWwindow* window){
     glUniformMatrix4fv(loc, 1, false, value_ptr(viewMat));
     loc = glGetUniformLocation(program.programID, "projMat");
     glUniformMatrix4fv(loc, 1, false, value_ptr(projMat));
+    loc = glGetUniformLocation(program.programID, "lightPosition");
+    glUniform3fv(loc, 1, value_ptr(lightPosition));
+    loc = glGetUniformLocation(program.programID, "cameraPosition");
+    glUniform3fv(loc, 1, value_ptr(cameraPosition));
     glBindVertexArray(vertexArray);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
     glDrawElements(GL_TRIANGLES, nTriangles[0]*3, GL_UNSIGNED_INT, 0);

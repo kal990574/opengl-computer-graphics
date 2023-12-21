@@ -20,8 +20,10 @@ void init();
 
 GLuint vertexBuffer = 0;
 GLuint normalBuffer = 0;
+GLuint texCoordBuffer = 0;
 GLuint indexBuffer = 0;
 GLuint vertexArray = 0;
+GLuint diffTex = 0;
 
 float theta = 0;
 float phi = 0;
@@ -75,6 +77,19 @@ glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
 void init(){
     loadJ3A( "dwarf.j3a" );
     program.loadShaders("shader.vert", "shader.frag");
+    
+    int w, h, n;
+    stbi_set_flip_vertically_on_load(true);
+    unsigned char* buf = stbi_load(diffuseMap[0].c_str(), &w, &h, &n, 4);
+    glGenTextures(1, &diffTex);
+    glBindTexture(GL_TEXTURE_2D, diffTex);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,GL_REPEAT);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB8_ALPHA8, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, buf);
+    stbi_image_free(buf);
+
     glGenBuffers(1, &vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, nVertices[0]*sizeof(glm::vec3), vertices[0], GL_STATIC_DRAW);
@@ -82,6 +97,10 @@ void init(){
     glGenBuffers(1, &normalBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, normalBuffer);
     glBufferData(GL_ARRAY_BUFFER, nVertices[0]*sizeof(glm::vec3), normals[0], GL_STATIC_DRAW);
+    
+    glGenBuffers(1, &texCoordBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, texCoordBuffer);
+    glBufferData(GL_ARRAY_BUFFER, nVertices[0]*sizeof(glm::vec2), texCoords[0], GL_STATIC_DRAW);
     
     glGenBuffers(1, &indexBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
@@ -96,6 +115,10 @@ void init(){
     glBindBuffer(GL_ARRAY_BUFFER, normalBuffer);
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, 0, 0, 0);
+    
+    glBindBuffer(GL_ARRAY_BUFFER, texCoordBuffer);
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2, 2, GL_FLOAT, 0, 0, 0);
 }
 const float PI = 3.14159265358979;
 void render( GLFWwindow* window){
@@ -129,6 +152,12 @@ void render( GLFWwindow* window){
     glUniform3fv(loc, 1, value_ptr(specularColor[0]));
     loc = glGetUniformLocation(program.programID, "shininess");
     glUniform1f(loc, shininess[0]);
+    
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, diffTex);
+    loc = glGetUniformLocation(program.programID, "diffTex");
+    glUniform1i(loc, 0);
+    
     glBindVertexArray(vertexArray);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
     glDrawElements(GL_TRIANGLES, nTriangles[0]*3, GL_UNSIGNED_INT, 0);

@@ -10,5 +10,6 @@ void main(void)
 {
     vec3 L = normalize(lightPosition - worldPos);
     vec3 N = normalize(normal);
-	out_Color = vec4(1.0, 0.0, 0.0, 1.0);
+    vec3 color = vec3(0,1,0) * dot(N,L);
+	out_Color = vec4(color, 1.0);
 }

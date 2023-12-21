@@ -29,7 +29,7 @@ void main(void)
     
     float Bu = texture(bumpTex, texCoord+vec2(0.00001,0)).r - texture(bumpTex, texCoord-vec2(0.00001,0)).r;
     float Bv = texture(bumpTex, texCoord+vec2(0,0.00001)).r - texture(bumpTex, texCoord-vec2(0,0.00001)).r;
-    vec3 bumpVec = vec3(Bu*100,Bv*100,1);
+    vec3 bumpVec = vec3(-Bu*50,-Bv*50,1);
     mat3 tbn = getTBN(N);
     N = normalize(tbn*bumpVec);
 

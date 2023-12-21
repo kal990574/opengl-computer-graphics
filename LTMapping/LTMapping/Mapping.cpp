@@ -93,7 +93,7 @@ GLuint loadTexture(const std::string& filename){
 }
 
 void init(){
-    loadJ3A( "Trex.j3a" );
+    loadJ3A( "dwarf.j3a" );
     program.loadShaders("shader.vert", "shader.frag");
     diffTex = loadTexture(diffuseMap[0]);
     bumpTex = loadTexture(bumpMap[0]);

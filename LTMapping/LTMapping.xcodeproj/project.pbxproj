@@ -10,7 +10,7 @@
 		98DD4BD22B2FF1DD005FECDB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DD4BD12B2FF1DD005FECDB /* OpenGL.framework */; };
 		98DD4BD42B2FF20E005FECDB /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DD4BD32B2FF20E005FECDB /* libglfw.3.3.dylib */; };
 		98DD4CC92B31718B005FECDB /* Mapping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DD4CC72B31718B005FECDB /* Mapping.cpp */; };
-		98DD4CCE2B317241005FECDB /* j3a.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DD4CCD2B317241005FECDB /* j3a.cpp */; };
+		98DD4CD12B34319C005FECDB /* j3a.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DD4CCD2B317241005FECDB /* j3a.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -152,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98DD4CCE2B317241005FECDB /* j3a.cpp in Sources */,
+				98DD4CD12B34319C005FECDB /* j3a.cpp in Sources */,
 				98DD4CC92B31718B005FECDB /* Mapping.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

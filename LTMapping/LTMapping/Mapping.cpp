@@ -70,7 +70,7 @@ glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
 }
 
 void init(){
-    loadJ3A( "Trex.j3a" );
+    loadJ3A( "dwarf.j3a" );
     program.loadShaders("shader.vert", "shader.frag");
     glGenBuffers(1, &vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);

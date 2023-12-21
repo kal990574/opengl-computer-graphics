@@ -7,6 +7,9 @@
 #include <glm/gtx/transform.hpp>
 #include "j3a.hpp"
 #include "toys.h"
+#define STB_IMAGE_IMPLEMENTATION
+//#include "stb_image.h"
+
 using namespace glm;
 using namespace std;
 
@@ -64,8 +67,8 @@ glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
         render(window);
         glfwPollEvents();
     }
-    glfwDestroyWindow(window);
-    glfwTerminate();
+    //glfwDestroyWindow(window);
+    //glfwTerminate();
     return 0;
 }
 
@@ -78,7 +81,7 @@ void init(){
     
     glGenBuffers(1, &normalBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, normalBuffer);
-    glBufferData(GL_ARRAY_BUFFER, nVertices[0]*sizeof(glm::vec3), vertices[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, nVertices[0]*sizeof(glm::vec3), normals[0], GL_STATIC_DRAW);
     
     glGenBuffers(1, &indexBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
@@ -86,7 +89,7 @@ void init(){
     
     glGenVertexArrays(1, &vertexArray);
     glBindVertexArray(vertexArray);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexArray);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, 0, 0, 0);
     

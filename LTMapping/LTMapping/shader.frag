@@ -31,7 +31,7 @@ void main(void)
     float Bv = texture(bumpTex, texCoord+vec2(0,0.00001)).r - texture(bumpTex, texCoord-vec2(0,0.00001)).r;
     vec3 bumpVec = vec3(-Bu*50,-Bv*50,1);
     mat3 tbn = getTBN(N);
-    N = normalize(tbn*bumpVec);
+    N = normalize(tbn * bumpVec);
 
     vec3 V = normalize(cameraPosition - worldPos);
     vec3 R = reflect(-L, N);

@@ -70,8 +70,8 @@ glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
         render(window);
         glfwPollEvents();
     }
-    //glfwDestroyWindow(window);
-    //glfwTerminate();
+    glfwDestroyWindow(window);
+    glfwTerminate();
     return 0;
 }
 

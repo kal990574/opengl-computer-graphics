@@ -93,7 +93,7 @@ GLuint loadTexture(const std::string& filename){
 }
 
 void init(){
-    loadJ3A( "dwarf.j3a" );
+    loadJ3A( "dragon.j3a" );
     program.loadShaders("shader.vert", "shader.frag");
     diffTex = loadTexture(diffuseMap[0]);
     bumpTex = loadTexture(bumpMap[0]);
@@ -140,7 +140,6 @@ void render( GLFWwindow* window){
     mat4 projMat = perspective(fovy, w/float(h), 0.1f, 100.f);
     mat4 viewMat = lookAt(cameraPosition, vec3(0), vec3(0,1,0));
     mat4 modelMat = mat4(1);
-    
     glEnable(GL_DEPTH_TEST);
     glClearColor(0,0,0.7,0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
